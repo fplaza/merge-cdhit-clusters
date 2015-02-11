@@ -17,7 +17,7 @@ class GenesIndexer
 		void make_index(boost::unordered_map<std::string,uint32_t>& map_gene_id, std::vector<std::string>& all_genes);
 
 	private:
-		const std::vector<std::string>& clusters_files_;
+		const std::vector<std::string> clusters_files_;
 
 };
 

@@ -5,7 +5,7 @@
 #include <iostream>
 #include "parameters.hh"
 #include "genes_indexer.hh"
-#include "merge_clusters.hh"
+#include "clusters_merger.hh"
 #include "clusters_writer.hh"
 
 int main(int argc, char* argv[])
@@ -20,7 +20,8 @@ int main(int argc, char* argv[])
 	std::cout << "Done. " << all_genes.size() << " genes indexed.\n" <<  std::endl;
 
 	std::cout << "Merging clusters" << std::endl;
-	const std::vector<Cluster> merged_clusters = merge_clusters(pars.all_clusters_files, pars.final_clusters_file, map_gene_id, all_genes);
+	ClustersMerger clusters_merger(pars.all_clusters_files, pars.final_clusters_file, map_gene_id, all_genes);
+	const std::vector<Cluster> merged_clusters = clusters_merger.merge();
 	std::cout << "Done.\n" << std::endl;
 
 	std::cout << "Writing merged  clusters" << std::endl;
