@@ -5,7 +5,7 @@
 #include "clusters_writer.hh"
 #include <fstream>
 
-void ClustersWriter::print()
+void ClustersWriter::write()
 {
 	std::ofstream ofs;
 	ofs.open(output_file_.c_str());

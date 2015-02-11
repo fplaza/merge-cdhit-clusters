@@ -13,7 +13,7 @@ class ClustersWriter
 {
 	public:
 		ClustersWriter(const std::vector<Cluster>& clusters, const std::string& output_file);
-		void print();
+		void write();
 
 	private:
 		const std::vector<Cluster>& clusters_;
