@@ -4,7 +4,7 @@
 
 #include <iostream>
 #include "parameters.hh"
-#include "make_genes_index.hh"
+#include "genes_indexer.hh"
 #include "merge_clusters.hh"
 #include "clusters_writer.hh"
 
@@ -15,7 +15,8 @@ int main(int argc, char* argv[])
 	std::cout << "Indexing genes..." << std::endl;
 	boost::unordered_map<std::string, uint32_t> map_gene_id;
 	std::vector<std::string> all_genes;
-	make_genes_index(pars.initial_clusters_files, map_gene_id, all_genes);
+	GenesIndexer genes_indexer(pars.initial_clusters_files);
+	genes_indexer.make_index(map_gene_id, all_genes);
 	std::cout << "Done. " << all_genes.size() << " genes indexed.\n" <<  std::endl;
 
 	std::cout << "Merging clusters" << std::endl;
