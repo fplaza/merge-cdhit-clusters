@@ -10,7 +10,7 @@
 #include <fstream>
 #include <boost/lexical_cast.hpp>
 
-class cluster_reader
+class ClusterReader
 {
 	private:
 		const std::string& cluster_file_;
@@ -18,32 +18,32 @@ class cluster_reader
 		std::string line_;
 
 	public:
-		cluster_reader(const std::string& cluster_file);
-		~cluster_reader();
+		ClusterReader(const std::string& cluster_file);
+		~ClusterReader();
 		void reset();
-		bool next_cluster(cluster& clstr);
-		std::vector<cluster> read_all();
+		bool next_cluster(Cluster& cluster);
+		std::vector<Cluster> read_all();
 };
 
 
-inline cluster_reader::cluster_reader(const std::string& cluster_file)
+inline ClusterReader::ClusterReader(const std::string& cluster_file)
 	: cluster_file_(cluster_file), stream_(cluster_file_.c_str()), line_()
 {
 	line_.reserve(200);
 }
 
-inline cluster_reader::~cluster_reader()
+inline ClusterReader::~ClusterReader()
 {
 	stream_.close();
 }
 
-inline void cluster_reader::reset()
+inline void ClusterReader::reset()
 {
 	stream_.close();
 	stream_.open(cluster_file_.c_str());
 }
 
-inline bool cluster_reader::next_cluster(cluster& clstr)
+inline bool ClusterReader::next_cluster(Cluster& cluster)
 {
 	if (!stream_.good())
 		return false;
@@ -55,9 +55,9 @@ inline bool cluster_reader::next_cluster(cluster& clstr)
 		return false;
 	}
 	
-	clstr.id = boost::lexical_cast<uint32_t>(line_.substr(9));
+	cluster.id = boost::lexical_cast<uint32_t>(line_.substr(9));
 
-	clstr.genes.clear();
+	cluster.genes.clear();
 	while (stream_.peek() != EOF && stream_.peek() != '>')
 	{
 		std::getline(stream_, line_);
@@ -65,7 +65,7 @@ inline bool cluster_reader::next_cluster(cluster& clstr)
 		const size_t gene_start = line_.find('>')+1;
 		const size_t gene_end = line_.find("...", gene_start)-1;
 		const std::string& gene = line_.substr(gene_start, gene_end-gene_start+1);
-		clstr.genes.push_back(gene);
+		cluster.genes.push_back(gene);
 	}
 
 	return true;

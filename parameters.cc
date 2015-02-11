@@ -10,9 +10,9 @@
 #include <boost/program_options.hpp>
 namespace po = boost::program_options;
 
-parameters parameters::parse_cmd_line(int argc, char* argv[])
+Parameters Parameters::parse_cmd_line(int argc, char* argv[])
 {
-	parameters pars;
+	Parameters pars;
 
 	// Create options decription
 	po::options_description opts_desc("");
@@ -25,7 +25,7 @@ parameters parameters::parse_cmd_line(int argc, char* argv[])
 		("help,h", "display this help and exit.")
 		;
 
-	// Retrieve and parse command line parameters
+	// Retrieve and parse command line Parameters
 	po::variables_map vm;
 	po::store(po::parse_command_line(argc, argv, opts_desc), vm);
 
@@ -50,7 +50,7 @@ parameters parameters::parse_cmd_line(int argc, char* argv[])
 	return pars;
 }
 
-void parameters::check_file_is_readable(const std::string& filepath)
+void Parameters::check_file_is_readable(const std::string& filepath)
 {
 	std::ifstream ifs;
 	ifs.open(filepath.c_str());
@@ -66,7 +66,7 @@ void parameters::check_file_is_readable(const std::string& filepath)
 	}
 }
 
-void parameters::check_file_is_writable(const std::string& filepath)
+void Parameters::check_file_is_writable(const std::string& filepath)
 {
 	std::ofstream ofs;
 	ofs.open(filepath.c_str());

@@ -9,7 +9,7 @@
 #include <vector>
 #include "cluster.hh"
 
-void print_clusters(const std::vector<cluster>& clusters, const std::string& output_file);
+void print_clusters(const std::vector<Cluster>& clusters, const std::string& output_file);
 
 #endif // PRINT_CLUSTERS_HH
 

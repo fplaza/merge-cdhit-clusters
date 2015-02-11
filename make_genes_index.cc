@@ -10,11 +10,11 @@ void make_genes_index(const std::vector<std::string>& initial_clusters_files, bo
 	size_t num_genes = 0;
 	for (std::vector<std::string>::const_iterator clusters_file = initial_clusters_files.begin(); clusters_file < initial_clusters_files.end(); clusters_file++)
 	{
-		cluster clstr;
-		cluster_reader reader(*clusters_file);
-		while(reader.next_cluster(clstr))
+		Cluster cluster;
+		ClusterReader cluster_reader(*clusters_file);
+		while(cluster_reader.next_cluster(cluster))
 		{
-			num_genes += clstr.genes.size();
+			num_genes += cluster.genes.size();
 		}
 	}
 
@@ -24,11 +24,11 @@ void make_genes_index(const std::vector<std::string>& initial_clusters_files, bo
 	uint32_t id =0;
 	for (std::vector<std::string>::const_iterator clusters_file = initial_clusters_files.begin(); clusters_file < initial_clusters_files.end(); clusters_file++)
 	{
-		cluster clstr;
-		cluster_reader reader(*clusters_file);
-		while(reader.next_cluster(clstr))
+		Cluster cluster;
+		ClusterReader cluster_reader(*clusters_file);
+		while(cluster_reader.next_cluster(cluster))
 		{
-			for (std::vector<std::string>::const_iterator gene = clstr.genes.begin(); gene < clstr.genes.end(); gene++)
+			for (std::vector<std::string>::const_iterator gene = cluster.genes.begin(); gene < cluster.genes.end(); gene++)
 			{
 				all_genes[id] = *gene;
 				map_gene_id[*gene] = id;

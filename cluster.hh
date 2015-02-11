@@ -10,12 +10,12 @@
 #include <string>
 #include <ostream>
 
-struct cluster
+struct Cluster
 {
 	uint32_t id;
 	std::vector<std::string> genes;
 };
 
-std::ostream& operator<<(std::ostream& out, const cluster& clstr);
+std::ostream& operator<<(std::ostream& out, const Cluster& cluster);
 
 #endif //CLUSTER_HH
