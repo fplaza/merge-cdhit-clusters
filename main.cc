@@ -6,7 +6,7 @@
 #include "parameters.hh"
 #include "make_genes_index.hh"
 #include "merge_clusters.hh"
-#include "print_clusters.hh"
+#include "clusters_writer.hh"
 
 int main(int argc, char* argv[])
 {
@@ -22,7 +22,10 @@ int main(int argc, char* argv[])
 	const std::vector<Cluster> merged_clusters = merge_clusters(pars.all_clusters_files, pars.final_clusters_file, map_gene_id, all_genes);
 	std::cout << "Done.\n" << std::endl;
 
-	print_clusters(merged_clusters, pars.merged_clusters_file);
+	std::cout << "Writing merged  clusters" << std::endl;
+	ClustersWriter clusters_writer(merged_clusters, pars.merged_clusters_file);
+	clusters_writer.print();
+	std::cout << "Done" << std::endl;
 
 	return 0;
 }
