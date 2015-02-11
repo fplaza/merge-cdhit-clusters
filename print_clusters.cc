@@ -1,3 +1,7 @@
+/*
+ * (C) Copyright 2015 Enterome
+ */
+
 #include "print_clusters.hh"
 #include <fstream>
 

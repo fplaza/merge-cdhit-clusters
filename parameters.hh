@@ -1,6 +1,10 @@
 #ifndef PARAMETERS_HH
 #define PARAMETERS_HH
 
+/*
+ * (C) Copyright 2015 Enterome
+ */
+
 #include <vector>
 #include <string>
 

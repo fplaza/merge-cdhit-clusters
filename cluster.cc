@@ -1,3 +1,7 @@
+/*
+ * (C) Copyright 2015 Enterome
+ */
+
 #include "cluster.hh"
 
 std::ostream& operator<<(std::ostream& out, const cluster& clstr)

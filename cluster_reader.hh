@@ -1,6 +1,10 @@
 #ifndef CLUSTER_READER_HH
 #define	CLUSTER_READER_HH
 
+/*
+ * (C) Copyright 2015 Enterome
+ */
+
 #include "cluster.hh"
 #include <string>
 #include <fstream>

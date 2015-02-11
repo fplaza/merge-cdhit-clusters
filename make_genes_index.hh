@@ -1,6 +1,10 @@
 #ifndef MAKE_GENES_INDEX_HH
 #define MAKE_GENES_INDEX_HH
 
+/*
+ * (C) Copyright 2015 Enterome
+ */
+
 #include <string>
 #include <vector>
 #include <stdint.h>

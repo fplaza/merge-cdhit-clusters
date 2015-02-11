@@ -1,3 +1,7 @@
+/*
+ * (C) Copyright 2015 Enterome
+ */
+
 #include "make_genes_index.hh"
 #include "cluster_reader.hh"
 

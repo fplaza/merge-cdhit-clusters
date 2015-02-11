@@ -1,3 +1,7 @@
+/*
+ * (C) Copyright 2015 Enterome
+ */
+
 #include "parameters.hh"
 #include <iostream>
 #include <fstream>

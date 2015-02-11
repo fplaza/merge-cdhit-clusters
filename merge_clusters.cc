@@ -1,3 +1,7 @@
+/*
+ * (C) Copyright 2015 Enterome
+ */
+
 #include "merge_clusters.hh"
 #include <boost/pending/disjoint_sets.hpp>
 #include "cluster_reader.hh"

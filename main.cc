@@ -1,3 +1,7 @@
+/*
+ * (C) Copyright 2015 Enterome
+ */
+
 #include <iostream>
 #include "parameters.hh"
 #include "make_genes_index.hh"

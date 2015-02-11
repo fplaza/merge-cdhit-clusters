@@ -1,3 +1,7 @@
+/*
+ * (C) Copyright 2015 Enterome
+ */
+
 #include "cluster_reader.hh"
 
 std::vector<cluster> cluster_reader::read_all()
