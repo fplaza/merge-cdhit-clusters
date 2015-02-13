@@ -42,5 +42,5 @@ int main(int argc, char* argv[])
 	time_profiler.stop_last_timer();
 	std::cout << time_profiler;
 
-	return 0;
+	std::exit(0);
 }
