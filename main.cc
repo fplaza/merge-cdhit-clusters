@@ -39,6 +39,7 @@ int main(int argc, char* argv[])
 	time_profiler.stop_last_timer();
 	std::cout << "Done\n" << std::endl;
 
+	time_profiler.stop_last_timer();
 	std::cout << time_profiler;
 
 	return 0;
