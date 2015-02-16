@@ -15,9 +15,12 @@ struct Parameters
 	std::string final_clusters_file;
 	std::vector<std::string> all_clusters_files;
 	std::string merged_clusters_file;
+
 	static Parameters parse_cmd_line(int argc, char* argv[]);
 	static void check_file_is_readable(const std::string& filepath);
 	static void check_file_is_writable(const std::string& filepath);
 };
+
+std::ostream& operator<<(std::ostream& os, const Parameters& pars);
 
 #endif // PARAMETERS_HH

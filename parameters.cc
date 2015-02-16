@@ -81,3 +81,28 @@ void Parameters::check_file_is_writable(const std::string& filepath)
 					" cannot be created. Check that the path is valid and that you have write permissions."));
 	}
 }
+
+std::ostream& operator<<(std::ostream& os, const Parameters& pars)
+{
+	os << "---------------------";
+	os << "\nParameters summary:";
+
+	os << "\n--initial-clusters =";
+	for (std::vector<std::string>::const_iterator it = pars.initial_clusters_files.begin(); it < pars.initial_clusters_files.end(); ++it)
+	{
+		os <<  ' ' << *it;
+	}
+
+	os << "\n--intermediate-clusters =";
+	for (std::vector<std::string>::const_iterator it = pars.intermediate_clusters_files.begin(); it < pars.intermediate_clusters_files.end(); ++it)
+	{
+		os <<  ' ' << *it;
+	}
+
+	os << "\n--final-clusters = " << pars.final_clusters_file;
+
+	os << "\n--merged-clusters = " << pars.merged_clusters_file;
+	os << '\n';
+
+	return os;
+}

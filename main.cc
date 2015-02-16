@@ -12,6 +12,7 @@
 int main(int argc, char* argv[])
 {
 	const Parameters& pars = Parameters::parse_cmd_line(argc, argv);
+	std::cout << pars << std::endl;
 
 	TimeProfiler time_profiler;
 	time_profiler.start_new_timer("Total");
