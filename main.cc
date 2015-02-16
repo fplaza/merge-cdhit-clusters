@@ -33,7 +33,7 @@ int main(int argc, char* argv[])
 		ClustersMerger clusters_merger(pars.all_clusters_files, pars.final_clusters_file, map_gene_id, all_genes);
 		const std::vector<Cluster> merged_clusters = clusters_merger.merge();
 		time_profiler.stop_last_timer();
-		std::cout << "Done.\n" << std::endl;
+		std::cout << "Done. " << merged_clusters.size() << " clusters after merging.\n" << std::endl;
 
 		std::cout << "Writing merged clusters..." << std::endl;
 		time_profiler.start_new_timer("Writing merged clusters");
