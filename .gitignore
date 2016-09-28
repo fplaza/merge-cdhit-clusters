@@ -1,5 +1,6 @@
 # Binary file
 merge-cdhit-clusters
+*.o
 # Misc
 clusters-files/
 
